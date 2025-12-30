@@ -1,6 +1,8 @@
 import styled from 'styled-components'
 import { TextCard } from '../components/TextCard'
 import { Header } from '../components/Headers'
+import type { Text } from '../types/Text'
+
 
 const Feed = styled.main`
   max-width: 600px;
@@ -10,14 +12,28 @@ const Feed = styled.main`
   gap: 16px;
 `
 
+const texts: Text[] = [
+  {
+    id: '1',
+    title: 'Um pequeno conto',
+    content: 'Era uma vez um desenvolvedor que decidiu voltar a programar…',
+    author: {
+      id: 'u1',
+      name: 'Autor Exemplo',
+      username: 'autor',
+    },
+    createdAt: new Date().toISOString(),
+  },
+]
+
 export default function Home() {
   return (
     <>
       <Header />
       <Feed>
-        <TextCard />
-        <TextCard />
-        <TextCard />
+        {texts.map(text => (
+          <TextCard key={text.id} text={text} />
+        ))}
       </Feed>
     </>
   )

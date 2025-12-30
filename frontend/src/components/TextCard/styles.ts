@@ -15,4 +15,10 @@ export const Title = styled.h2`
 export const Content = styled.p`
   color: ${({ theme }) => theme.colors.secondary};
   font-size: 0.9rem;
+  margin-bottom: ${({ theme }) => theme.spacing.sm};
+`
+
+export const Author = styled.span`
+  font-size: 0.75rem;
+  color: ${({ theme }) => theme.colors.secondary};
 `

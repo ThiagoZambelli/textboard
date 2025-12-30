@@ -1,12 +1,16 @@
-import { Card, Title, Content } from './styles'
+import type { Text } from '../../types/Text'
+import { Card, Title, Content, Author } from './styles'
 
-export function TextCard() {
+interface TextCardProps{
+  text: Text
+}
+
+export function TextCard({text}:TextCardProps) {
   return (
     <Card>
-      <Title>Um pequeno conto</Title>
-      <Content>
-        Era uma vez um desenvolvedor que decidiu voltar a programar…
-      </Content>
+      <Title>{text.title}</Title>
+      <Content>{text.content}</Content>
+      <Author>por {text.author.name}</Author>
     </Card>
   )
 }
